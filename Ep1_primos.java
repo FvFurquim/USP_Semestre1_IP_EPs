@@ -1,5 +1,4 @@
 // Ep1_primos.java
-// Exercício dado em sala de aula - Felipe Furquim (11208030) e Lucas Freitas (11315061) - 02/04/19 9h35
 
 import java.util.Scanner;
 
