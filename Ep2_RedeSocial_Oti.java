@@ -35,7 +35,7 @@ public class Ep2_RedeSocial_Oti{
         
         int[][] rede;
         
-        // Inserir usu·rios;
+        // Inserir usu√°rios;
         
         String entrada = input.nextLine();
         String[] nomes = entrada.split("\\|");
@@ -50,38 +50,29 @@ public class Ep2_RedeSocial_Oti{
         String[] seguindo = null;
         
         if(!entrada2.equals("")) {
-            
             seguindo = entrada2.split("\\|");
             
             // Criar a matriz;
-
             while(j < seguindo.length) {
-
                 int validador = 0;
                 i = 0;
-
                 while(validador == 0) {
                     if(seguindo[j].equals(nomes[i])) {
-
                         for(int x = 0; x < n; x++) {
-
                             if(seguindo[j+1].equals(nomes[x])) {
-
                                 rede[i][x] = 1;
                                 validador++;
                             }
                         }
                     }
-
-                    else {
+                    else 
                         i++;
-                    }
                 }
                 j+=2;
             }
         }    
         
-        // DeclaraÁ„o de arrays dependente de n;
+        // Declara√ß√£o de arrays dependente de n;
         
         int numSeguidores[] = new int [n];
         int numSeguidos[] = new int [n];
@@ -91,10 +82,9 @@ public class Ep2_RedeSocial_Oti{
         String sMaisSeguidos[] = new String [n];
         String sMenosSeguidos[] = new String [n];
         
-        // Se tiver apenas um usu·rio;
+        // Se tiver apenas um usu√°rio;
         
         if(n == 1) {
-            
             System.out.println(0);
             System.out.printf("0 %s\n", nomes[0]);
             System.out.printf("0 %s\n", nomes[0]);
@@ -104,13 +94,9 @@ public class Ep2_RedeSocial_Oti{
         }
         
         else {
-        
-            // N˙mero de seguidores que cada um tem;
-
+            // N√∫mero de seguidores que cada um tem;
             for(int q = 0; q < n; q++) {    
-
                 for(int p = 0; p < n; p++) { 
-
                     if(rede[p][q] == 1) {
                         numSeguidores[q] = numSeguidores[q] + 1;
                     }  
@@ -118,20 +104,15 @@ public class Ep2_RedeSocial_Oti{
             }
 
             // Quem tem mais seguidores;
-
             sMaisSeguidores[s] = nomes[0]; 
-
             for(int r = 1; r < numSeguidores.length; r++) {
-
                 if(numSeguidores[r] > numSeguidores[iMaisSeguidores]) {
-
                     iMaisSeguidores = r;
                     sMaisSeguidores[s] = nomes[r];
                     cont = 1;
                     t = 0;
                 }
                 else if(numSeguidores[r] == numSeguidores[iMaisSeguidores]) {
-
                     t++;
                     sMaisSeguidores[s+t] = nomes[r];
                     cont++;
@@ -139,53 +120,39 @@ public class Ep2_RedeSocial_Oti{
             }
 
             // Quem tem menos seguidores;
-
             sMenosSeguidores[v] = nomes[0]; 
-
             for(int a = 1; a < numSeguidores.length; a++) {
-
                 if(numSeguidores[a] < numSeguidores[iMenosSeguidores]) {
-
                     iMenosSeguidores = a;
                     sMenosSeguidores[s] = nomes[a];
                     cont2 = 1;
                     w = 0;
                 }
                 else if(numSeguidores[a] == numSeguidores[iMenosSeguidores]) {
-
                     w++;
                     sMenosSeguidores[v+w] = nomes[a];
                     cont2++;
                 }            
             }
 
-            // N˙mero de seguidos que cada um tem;
-
+            // N√∫mero de seguidos que cada um tem;
             for(int c = 0; c < n; c++) {    
-
                 for(int d = 0; d < n; d++) { 
-
-                    if(rede[c][d] == 1) {
+                    if(rede[c][d] == 1) 
                         numSeguidos[c] = numSeguidos[c] + 1;
-                    }  
                 }           
             }
 
             // Quem mais segue;
-
             sMaisSeguidos[e] = nomes[0]; 
-
             for(int g = 1; g < numSeguidos.length; g++) {
-
                 if(numSeguidos[g] > numSeguidos[iMaisSeguidos]) {
-
                     iMaisSeguidos = g;
                     sMaisSeguidos[e] = nomes[g];
                     cont3 = 1;
                     f = 0;
                 }
                 else if(numSeguidos[g] == numSeguidos[iMaisSeguidos]) {
-
                     f++;
                     sMaisSeguidos[e+f] = nomes[g];
                     cont3++;
@@ -193,40 +160,30 @@ public class Ep2_RedeSocial_Oti{
             }
 
             // Quem menos segue;
-
             sMenosSeguidos[aa] = nomes[0]; 
-
             for(int cc = 1; cc < numSeguidos.length; cc++) {
-
                 if(numSeguidos[cc] < numSeguidos[iMenosSeguidos]) {
-
                     iMenosSeguidos = cc;
                     sMenosSeguidos[aa] = nomes[cc];
                     cont4 = 1;
                     bb = 0;
                 }
+                    
                 else if(numSeguidos[cc] == numSeguidos[iMenosSeguidos]) {
-
                     bb++;
                     sMenosSeguidos[aa+bb] = nomes[cc];
                     cont4++;
                 }            
             }
 
-            // Seguidores m˙tuos;
-
+            // Seguidores m√∫tuos;
             for(int k = 0; k < n; k++){
-
                 int l = 0;
-
                 while(l < n){
-
                     if( k <= l){
                         if(rede[k][l] == 1 && rede[l][k] == 1){
-
                             mutuo[m] = nomes[k];
                             mutuo[m+1] = nomes[l];
-
                             m+=2;
                             contMutuo++;
                         }
@@ -236,14 +193,11 @@ public class Ep2_RedeSocial_Oti{
             }
 
             // Imprimir a matriz;
-
             for(int y = 0; y < n; y++) {
-
                 for(int z = 0; z < n; z++) {
-
                     if(z == n - 1)
                         System.out.printf("%s", rede[y][z]); 
-                        
+                     
                     else
                         System.out.printf("%s ", rede[y][z]);
  
@@ -252,16 +206,12 @@ public class Ep2_RedeSocial_Oti{
             }  
 
             // Imprimir usuario com mais seguidores;
-
             System.out.printf("%d ", numSeguidores[iMaisSeguidores]);
-
             for(int u = 0; u < cont; u++) {
-
                 if(u == 0) {
-                System.out.printf("%s", sMaisSeguidores[u]);
-
-                if( u == cont - 1)
-                    System.out.println("");
+                    System.out.printf("%s", sMaisSeguidores[u]);
+                    if( u == cont - 1)
+                        System.out.println("");
                 }
 
                 else if( u == cont - 1)
@@ -272,16 +222,13 @@ public class Ep2_RedeSocial_Oti{
             }
 
              // Imprimir usuario com menos seguidores;
-
             System.out.printf("%d ", numSeguidores[iMenosSeguidores]);
-
             for(int b = 0; b < cont2; b++) {
-
                 if(b == 0) {
-                System.out.printf("%s", sMenosSeguidores[b]);
+                    System.out.printf("%s", sMenosSeguidores[b]);
 
-                if( b == cont2 - 1)
-                    System.out.println("");
+                    if( b == cont2 - 1)
+                        System.out.println("");
                 }
 
                 else if( b == cont2 - 1)
@@ -292,11 +239,8 @@ public class Ep2_RedeSocial_Oti{
             }
 
             // Imprimir usuario que mais segue;
-
             System.out.printf("%d ", numSeguidos[iMaisSeguidos]);
-
             for(int h = 0; h < cont3; h++) {
-
                 if(h == 0) {
                 System.out.printf("%s", sMaisSeguidos[h]);
 
@@ -312,16 +256,13 @@ public class Ep2_RedeSocial_Oti{
             }
 
             // Imprimir usuario que menos segue;
-
             System.out.printf("%d ", numSeguidos[iMenosSeguidos]);
-
             for(int dd = 0; dd < cont4; dd++) {
-
                 if(dd == 0) {
-                System.out.printf("%s", sMenosSeguidos[dd]);
+                    System.out.printf("%s", sMenosSeguidos[dd]);
 
-                if( dd == cont4 - 1)
-                    System.out.println("");
+                    if( dd == cont4 - 1)
+                        System.out.println("");
                 }
 
                 else if( dd == cont4 - 1)
@@ -331,10 +272,8 @@ public class Ep2_RedeSocial_Oti{
                     System.out.printf("|%s", sMenosSeguidos[dd]);
             }
 
-            // Imprimir seguidores m˙tuos
-
+            // Imprimir seguidores m√∫tuos
             for(int o = 0; o < contMutuo * 2; o++ ) {
-
                 if( o == 0 )
                     System.out.printf("%s", mutuo[o]);
 
@@ -343,7 +282,6 @@ public class Ep2_RedeSocial_Oti{
 
                 else
                     System.out.printf("|%s", mutuo[o]);
-
             }
             
             if(contMutuo == 0)
