@@ -1,6 +1,6 @@
 public class Carro {
     
-    //Atributos
+    // Atributos
     private String nome;
     private int direcao;
     private Motorista motoristaAtual;
