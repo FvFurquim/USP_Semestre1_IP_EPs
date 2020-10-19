@@ -1,7 +1,6 @@
 public class Carro {
     
-    //Atributos;
-    
+    //Atributos
     private String nome;
     private int direcao;
     private Motorista motoristaAtual;
@@ -16,8 +15,7 @@ public class Carro {
     private boolean movendoAnteriormente;
     private boolean movendoAnteriormente2;
     
-    //Métodos especiais;
-    
+    // Construtores
     public Carro(String nome){
         this.nome = nome;
         this.direcao = 0;
@@ -48,7 +46,7 @@ public class Carro {
         this.movendoAnteriormente2 = false;
     }
 
-    // gets
+    // getters
     public String getNome() {               
         return nome;
     }
@@ -63,6 +61,10 @@ public class Carro {
     
     public int getVelocidade() {            
         return velocidade;
+    }
+    
+    public int getAceleracao() {            
+        return aceleracao;
     }
     
     public int getPosicaoX() {              
@@ -113,10 +115,6 @@ public class Carro {
     public void setVelocidade(int velocidade) {     
         this.velocidade = velocidade;
     }
-
-    public int getAceleracao() {            
-        return aceleracao;
-    }
     
     public void setAceleracao(int aceleracao) {     
         this.aceleracao = aceleracao;
@@ -154,7 +152,7 @@ public class Carro {
         this.movendoAnteriormente2 = movendoAnteriormente2;
     }
 
-    //Métodos
+    // Métodos
     public void mover(){
         setMovendo(true);
         
@@ -314,10 +312,7 @@ public class Carro {
     
     public void acelerar(int incremento){
         setMovendoAnteriormente(false);
-        
-        //if(getAceleracao() < 0)
-            //setAceleracao(0);
-        
+
         if(getMovendoAnteriormente() == false){
             setAceNFuncional(getAceleracao() + incremento);
         }
