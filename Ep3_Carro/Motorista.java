@@ -1,12 +1,10 @@
 public class Motorista {
     
-    //Atributos;
-    
+    // Atributos
     private String nome;
     private Carro carroAtual;
     
-    //Métodos especiais;
-    
+    // Construtor
     public Motorista(String nome){
         this.nome = nome;
     }
@@ -15,8 +13,7 @@ public class Motorista {
         return this.nome;
     }
 
-    //Métodos;
-    
+    // MÃ©todos
     public void entrarNoCarro(Carro carro){
         if(carroAtual == null && carro.getVelocidade() == 0){
             this.carroAtual = carro;
