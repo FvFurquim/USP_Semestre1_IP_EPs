@@ -16,7 +16,7 @@ public class Carro {
     private boolean movendoAnteriormente;
     private boolean movendoAnteriormente2;
     
-    //Métodos especiais;
+    //MÃ©todos especiais;
     
     public Carro(String nome){
         this.nome = nome;
@@ -48,32 +48,66 @@ public class Carro {
         this.movendoAnteriormente2 = false;
     }
 
+    // gets
     public String getNome() {               
         return nome;
     }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
+    
     public int getDirecao() {       
         return direcao;
+    }
+    
+    public Motorista getMotoristaAtual() {
+        return motoristaAtual;
+    }
+    
+    public int getVelocidade() {            
+        return velocidade;
+    }
+    
+    public int getPosicaoX() {              
+        return posicaoX;
+    }
+
+    public int getPosicaoY() {             
+        return posicaoY;
+    }
+    
+    public boolean getMovendo(){        
+        return movendo;
+    }
+    
+    public boolean getPraTras() {           
+        return praTras;
+    }
+    
+    public boolean getPraFrente() {     
+        return praFrente;
+    }
+    
+    public int getAceNFuncional() {        
+        return aceNFuncional;
+    }
+    
+    public boolean getMovendoAnteriormente() {      
+        return movendoAnteriormente;
+    }
+    
+     public boolean getMovendoAnteriormente2() {
+        return movendoAnteriormente2;
+    }
+    
+    // setters
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public void setDirecao(int direcao) {       
         this.direcao = direcao;
     }
 
-    public Motorista getMotoristaAtual() {
-        return motoristaAtual;
-    }
-
     public void setMotoristaAtual(Motorista motoristaAtual) {
         this.motoristaAtual = motoristaAtual;
-    }
-
-    public int getVelocidade() {            
-        return velocidade;
     }
 
     public void setVelocidade(int velocidade) {     
@@ -83,77 +117,44 @@ public class Carro {
     public int getAceleracao() {            
         return aceleracao;
     }
-
+    
     public void setAceleracao(int aceleracao) {     
         this.aceleracao = aceleracao;
-    }
-
-    public int getPosicaoX() {              
-        return posicaoX;
     }
 
     public void setPosicaoX(int posicaoX) {     
         this.posicaoX = posicaoX;
     }
 
-    public int getPosicaoY() {             
-        return posicaoY;
-    }
-
     public void setPosicaoY(int posicaoY) {
         this.posicaoY = posicaoY;
     }
     
-    public boolean getMovendo(){        
-        return movendo;
-    } 
-    
     public void setMovendo(boolean movendo){        
         this.movendo = movendo;
     }
-
-    public boolean getPraFrente() {     
-        return praFrente;
-    }
-
+    
     public void setPraFrente(boolean praFrente) {
         this.praFrente = praFrente;
-    }
-
-    public boolean getPraTras() {           
-        return praTras;
     }
 
     public void setPraTras(boolean praTras) {       
         this.praTras = praTras;
     }
 
-    public int getAceNFuncional() {        
-        return aceNFuncional;
-    }
-
     public void setAceNFuncional(int aceNFuncional) {       
         this.aceNFuncional = aceNFuncional;
-    }
-
-    public boolean getMovendoAnteriormente() {      
-        return movendoAnteriormente;
     }
 
     public void setMovendoAnteriormente(boolean movendoAnteriormente) { 
         this.movendoAnteriormente = movendoAnteriormente;
     }
 
-    public boolean getMovendoAnteriormente2() {
-        return movendoAnteriormente2;
-    }
-
     public void setMovendoAnteriormente2(boolean movendoAnteriormente2) {
         this.movendoAnteriormente2 = movendoAnteriormente2;
     }
 
-//Métodos;
-
+    //MÃ©todos
     public void mover(){
         setMovendo(true);
         
@@ -324,9 +325,6 @@ public class Carro {
     
     public void frear(int decremento){
         setMovendoAnteriormente(false);
-        
-        //if(getAceleracao() > 0)
-            //setAceleracao(0);
         
         if(getMovendoAnteriormente() == false){
             setAceNFuncional(getAceleracao() - decremento);
